@@ -2,7 +2,7 @@ package prog_1;
 
 public class FirstLoop {
 
-    public static void loop() {
+    public static void run() {
         int num = 1;
         while (num <= 50) {
             if (num % 2 != 0) {

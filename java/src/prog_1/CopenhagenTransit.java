@@ -3,7 +3,7 @@ package prog_1;
 import java.util.Scanner;
 
 public class CopenhagenTransit {
-    public static void transit() {
+    public static void run() {
         Scanner scnr = new Scanner(System.in);
         int zoneNumber;
         String adultOrChild;

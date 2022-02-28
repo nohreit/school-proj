@@ -48,7 +48,7 @@ public class LabProgram {
         }
     }
 
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         Scanner scnr = new Scanner(System.in);
         int num1;
         int num2;
@@ -63,11 +63,8 @@ public class LabProgram {
         largestNumber = largestNumber(num1, num2, num3);
         smallestNumber = smallestNumber(num1, num2, num3);
 
-
         System.out.println("The output is : " + largestNumber);
         System.out.println("The output is : " + smallestNumber);
-
-
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class IntegerExpressions {
 
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         Scanner scnr = new Scanner(System.in);
         int firstInt, secondInt, thirdInt, firstResult, secondResult, thirdResult;
 
@@ -25,13 +25,4 @@ public class IntegerExpressions {
         System.out.println("Second Result = " + secondResult);
         System.out.println("Third Result = " + thirdResult);
     }
-
-
-//    public static void p(Object o) {
-//        System.out.print(o);
-//    }
-//
-//    public static void pln(Object o) {
-//        System.out.println(o);
-//    }
 }
