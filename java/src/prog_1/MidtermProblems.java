@@ -1,44 +1,8 @@
 package prog_1;
 
 public class MidtermProblems {
-    public static void main(String[] args) {
-/*        pln("Problem 1 Test");
-        pln(replaceFirst("make", 't'));
-        pln(replaceFirst("a", 'x'));
-        pln("Problem 2 Test\n");
-        pln(difference(89, 56));
-        pln(difference(56, 89));
-        pln(difference(70, 64));
-        pln(difference(64, 70));
-        pln(difference(43, 43));
-        pln("Problem 3 Test\n");
-        pln(odds(5));
-        pln(odds(8));
-        pln(odds(9));
-        pln(odds(-5));
-        pln(odds(0));
-        pln(odds(1));
-        pln("Problem 4 Test\n");
-        pln(sumAll(2, 5));
-        pln(sumAll(5, 2));
-        pln(sumAll(3, 3));
-        pln(sumAll(3, 5));
-        pln(sumAll(-4, 3));
-        pln(sumAll(-4, 2));
-        pln(sumAll(-5, -2));
-        pln(sumAll(-5, 2));
-        pln(sumAll(-2, 5));
-        pln(sumAll(-5, -3));
-        pln(sumAll(3, -5));
-        pln(sumAll(-3, 5));
-*/
-
+    public static void run() {
         float x = 1, y = 2, z = 3;
-/*
-
-        int totalNum2 = Math.pow(Math.pow(x(y, z)));
-        int totalNum3 = Math.abs(y(Math.pow(z)Math.sqrt(xy)));
-*/
         System.out.println(Math.pow(x, z));
         System.out.println(Math.pow(x, Math.pow(y, z)));
         System.out.println(Math.abs(y));
@@ -54,22 +18,6 @@ public class MidtermProblems {
 
     }
 
-    // Problem 1
-    /*public static String replaceFirst(String s, char c) {
-        if (s == null) {
-            return null;
-        }
-        if (s.equals("")) {
-            return "";
-        }
-
-        String str;
-//        str = 't' + "ake"
-        str = c + s.substring(1);
-
-        return str;
-    }*/
-
     // Problem 2 (Shorter)
     public static String difference(int a, int b) {
         if (a > b) return "a is bigger by " + (a - b) + "";
@@ -77,8 +25,51 @@ public class MidtermProblems {
         return "EQUAL";
     }
 
+
+    // Problem 3 (Shorter)
+    public static String odds(int a) {
+        if (a == 0) return "";
+        if (a < 0) return "NONE";
+        StringBuilder str = new StringBuilder();
+        a = (a % 2 == 0) ? a - 1 : a;
+        for (int i = 1; i <= a; i++)
+            if (i % 2 == 1) str.append(i).append((i < a) ? "," : "");
+        return str.toString();
+    }
+
+
+    // Problem 4 (Shorter)
+    public static int sumAll(int a, int b) {
+        int sum = 0;
+        if (a < b)
+            for (int i = a; i <= b; i++)
+                sum += i;
+        else if (a > b)
+            for (int i = b; i <= a; i++)
+                sum += i;
+        else sum = a + b;
+        return sum;
+    }
+
+    /* The comment below is to explain in a more detailed way the above methods
+    // Problem 1
+    public static String replaceFirst(String s, char c) {
+        if (s == null) { // check if the passed string is null
+            return null; // returns null and get out of the function
+        }
+        if (s.equals("")) { // check if the passed string is empty
+            return ""; // returns an empty string and get out of the function
+        }
+
+        String str;
+        //str = 't' + "ake"
+        str = c + s.substring(1);
+
+        return str;
+    }
+
     // Problem 2
-    /*public static String difference(int a, int b) {
+    public static String difference(int a, int b) { // calculate the difference between a and b
         String str;
         int diff;
         if (a > b) {
@@ -91,21 +82,10 @@ public class MidtermProblems {
             str = "EQUAL";
         }
         return str;
-    }*/
-
-    // Problem 3 (Shorter)
-    public static String odds(int a) {
-        if (a == 0) return "";
-        if (a < 0) return "NONE";
-        StringBuilder str = new StringBuilder("");
-        a = (a % 2 == 0) ? a - 1 : a;
-        for (int i = 1; i <= a; i++)
-            if (i % 2 == 1) str.append(i).append((i < a) ? "," : "");
-        return str.append("").toString();
     }
 
     // Problem 3
-    /*public static String odds(int a) {
+    public static String odds(int a) { // returns a string
         String str = "";
         if (a < 0) {
             return "NONE";
@@ -138,23 +118,10 @@ public class MidtermProblems {
         str += "";
 
         return str;
-    }*/
-
-    // Problem 4 (Shorter)
-    public static int sumAll(int a, int b) {
-        int sum = 0;
-        if (a < b)
-            for (int i = a; i <= b; i++)
-                sum += i;
-        else if (a > b)
-            for (int i = b; i <= a; i++)
-                sum += i;
-        else sum = a + b;
-        return sum;
     }
 
     // Problem 4
-    /*public static int sumAll(int a, int b) {
+    public static int sumAll(int a, int b) {
         int sum = 0;
         if (a < b) {
             for (int i = a; i <= b; i++) {
@@ -170,12 +137,4 @@ public class MidtermProblems {
 
         return sum;
     }*/
-
-    public static void pln(Object o) {
-        System.out.println(o);
-    }
-
-    public static void p(Object o) {
-        System.out.println(o);
-    }
 }

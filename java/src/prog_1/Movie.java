@@ -91,8 +91,7 @@ public class Movie {
     }
 
     public boolean equals(Object o) {
-        if (o instanceof Movie) {
-            Movie other = (Movie) o;
+        if (o instanceof Movie other) {
             return ((numMinutes == other.numMinutes) && (movieName.equalsIgnoreCase(other.movieName))
                     && (isKidFriendly == other.isKidFriendly) && (numCastMembers == other.numCastMembers)
                     && (doArraysMatch(castMembers, other.castMembers)));

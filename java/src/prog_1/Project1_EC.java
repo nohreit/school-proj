@@ -13,7 +13,7 @@ public class Project_EC {
         }
         public static void standard () {
             String operation;
-            System.out.print("The calculater will operate in standard mode.");
+            System.out.print("The calculator will operate in standard mode.");
             System.out.print(" Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division");
             operation = keyboard.next();
             if (operation.charAt(0) == '+') add();

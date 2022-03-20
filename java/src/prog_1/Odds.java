@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Odds {
     static Scanner scnr = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void run() {
 
         System.out.println(odds(0));
         System.out.println(odds(-5));
@@ -29,7 +29,6 @@ public class Odds {
                 }
             }
         }
-
         return str.toString();
     }
 }

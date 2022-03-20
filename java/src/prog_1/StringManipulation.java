@@ -2,7 +2,7 @@ package prog_1;
 
 import java.util.Scanner;
 
-public class StringManipulation { // Final Exam
+public class StringManipulation { // Final Exam (?) Not mine indeed ¯\_(ツ)_/¯
 
     public static void manipulateString() {
         Scanner sc = new Scanner(System.in);
@@ -24,6 +24,5 @@ public class StringManipulation { // Final Exam
         }
 
         System.out.print(newSentence);
-//        return newSentence;
     }
 }

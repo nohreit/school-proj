@@ -13,7 +13,7 @@ package prog_1;
 import java.util.Scanner;
 
 public class Practice {
-    public static void main(String[] args) {
+    public static void run() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome to the Fallout Shelter, we are at your service!");
@@ -30,7 +30,7 @@ public class Practice {
 
         System.out.printf("If you have enough on you right now then you can pay at once, would you like to %s? (Yes or No)%n", clientName);
 
-        String decision = "No";
+        String decision;
         decision = input.next();
 
         if (decision.equalsIgnoreCase("Yes")) {
@@ -39,9 +39,7 @@ public class Practice {
 
             double owe = total - payingSum;
             System.out.printf("You owe %.2f pounds, you can pay the rest later. %nFor now, enjoy your stay!", owe);
-        } else {
+        } else
             System.out.printf("No worries %s, enjoy your stay!%n", clientName);
-
-        }
     }
 }

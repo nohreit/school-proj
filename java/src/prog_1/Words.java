@@ -3,7 +3,7 @@ package prog_1;
 import java.util.Scanner;
 
 public class Words {
-    public static void main(String[] args) {
+    public static void run() {
         Scanner scnr = new Scanner(System.in);
 
         String w1, w2, w3, w4;

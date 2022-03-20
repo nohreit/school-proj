@@ -4,8 +4,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Scanner;
 
-public class StringStreamOutput {
-    public static void main(String[] args) {
+public class StringStreamOutput { // A copy-paste from the course platform. Only filled the while-loop
+    public static void run() {
         Scanner inSS = new Scanner(System.in);
         String userItem, firstName, lastName;
         int userAge;

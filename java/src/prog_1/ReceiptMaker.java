@@ -58,7 +58,7 @@ public class ReceiptMaker {
     }
 
     public double getMinPrice() {
-        if (numItemsPurchased == 0){
+        if (numItemsPurchased == 0) {
             return 0;
         }
         double minPrice = Integer.MAX_VALUE;
@@ -81,7 +81,7 @@ public class ReceiptMaker {
     }
 
     public double getMaxPrice() {
-        if (numItemsPurchased == 0){
+        if (numItemsPurchased == 0) {
             return 0;
         }
         double maxPrice = Integer.MIN_VALUE;
@@ -173,7 +173,7 @@ public class ReceiptMaker {
         return (a >= 0);
     }
 
-    public static void main(String[] args) {
+    public static void run() {
         Scanner scanner = new Scanner(System.in);
         ReceiptMaker rm = new ReceiptMaker();
         rm.greetUser();
