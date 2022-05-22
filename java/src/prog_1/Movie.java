@@ -1,5 +1,7 @@
 package prog_1;
 
+import java.util.Arrays;
+
 public class Movie {
     private String movieName;
     private int numMinutes;
@@ -65,13 +67,12 @@ public class Movie {
     }
 
     public boolean doArraysMatch(String[] arr1, String[] arr2) {
-        if (arr1 == null || arr2 == null || arr1.length != arr2.length) {
+        if (arr1 == null && arr2 == null)
+            return true;
+        if (arr1 == null || arr2 == null || arr1.length != arr2.length)
             return false;
-        }
         for (int i = 0; i < arr1.length; i++) {
-            if (!arr1[i].equalsIgnoreCase(arr2[i])) {
-                return false;
-            }
+            if (!arr1[i].equalsIgnoreCase(arr2[i])) return false;
         }
         return true;
     }
@@ -91,10 +92,10 @@ public class Movie {
     }
 
     public boolean equals(Object o) {
-        if (o instanceof Movie other) {
-            return ((numMinutes == other.numMinutes) && (movieName.equalsIgnoreCase(other.movieName))
-                    && (isKidFriendly == other.isKidFriendly) && (numCastMembers == other.numCastMembers)
-                    && (doArraysMatch(castMembers, other.castMembers)));
+        if (o instanceof Movie m) {
+            return (numMinutes == m.numMinutes) && (movieName.equalsIgnoreCase(m.movieName))
+                    && (isKidFriendly == m.isKidFriendly) && (numCastMembers == m.numCastMembers)
+                    && doArraysMatch(castMembers, m.castMembers);
         }
         return false;
     }

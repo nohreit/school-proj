@@ -1,12 +1,13 @@
-package asteroid;
+package video_ga.esguardian.game_f21.asteroid;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import asteroid.Point;
+
+import java.awt.*;
 
 public class Polygon {
 
-	 private Point[] shape;   // An array of points.
-	  public Point position;   // The offset mentioned above.
+	 private asteroid.Point[] shape;   // An array of points.
+	  public asteroid.Point position;   // The offset mentioned above.
 	  public double rotation; // Zero degrees is due east.
 	  
 	  public Polygon(Point[] inShape, Point inPosition, double inRotation) {
