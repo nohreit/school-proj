@@ -1,7 +1,5 @@
 package prog_2.sp22.end;
 
-import java.util.Objects;
-
 public class Person {
 
     private String name;
@@ -36,14 +34,21 @@ public class Person {
         this.height = Math.max(height, -1);
     }
 
+    @Override
     public Person clone() { // returns a copy of the Person with all the same values without revealing the original memory address
         return new Person(this.name, this.hasDriverLicense, this.age, this.height);
     }
 
     @Override
     public boolean equals(Object o) {    //2 Person objects are equal if all their variables are equal
-        return (o instanceof Person p && name.equals(p.name) && hasDriverLicense == p.hasDriverLicense && age == p.age
-                && height == p.height);
+//        return (o instanceof Person p && name.equals(p.name) && hasDriverLicense == p.hasDriverLicense && age == p.age
+//                && height == p.height);
+        if (o instanceof Person p) {
+            if (this.name.equals(p.name) && this.hasDriverLicense == p.hasDriverLicense &&
+                    this.age == p.age)
+                return this.height == p.height;
+        }
+        return false;
     }
 
     @Override

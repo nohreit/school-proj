@@ -5,12 +5,12 @@ public class Bicycle extends Vehicle implements Comparable<Bicycle> {
 
     public Bicycle() {
         super(1, 1);
-        weight = 0;
+        weight = 0.0;
     }
 
     public Bicycle(Person driver) {
         super(driver, new int[]{1});
-        weight = 0;
+        weight = 0.0;
     }
 
     public Bicycle(Person driver, double weight) {
@@ -19,21 +19,12 @@ public class Bicycle extends Vehicle implements Comparable<Bicycle> {
     }
 
     @Override
-    public boolean equals(Object o) {    //same weight. ACCURACY_RANGE = 0.5
-//        if(o instanceof Bicycle b && Math.abs(weight - b.weight) <= 0.5){
-//            return true;
-//        }
-//        return false;
-//        OR
-//        if(o instanceof Bicycle){
-//          Bicycle b = (Bicycle) o;
-//          if(Math.abs(weight - b.weight) <= 0.5){
-//              return true;
-//          }
-//        }
-//        return false;
-
-        return (o instanceof Bicycle b && Math.abs(weight - b.weight) < 0.5);
+    public boolean equals(Object o) {
+        if (o instanceof Bicycle) {
+            Bicycle a = (Bicycle) o;
+            return Math.abs(weight - a.getWeight()) <= 0.5;
+        }
+        return false;
     }
 
     public double getWeight() {
@@ -41,15 +32,13 @@ public class Bicycle extends Vehicle implements Comparable<Bicycle> {
     }
 
     public void setWeight(double w) {
-//        if(w < 0) this.weight = 0;
-//        else this.weight = w;
         this.weight = Math.max(w, 0);
     }
 
     @Override
     public void setDriver(Person p) throws InvalidDriverException {
         if (p.getAge() >= 3) personsOnBoard[0][0] = p;
-        else throw new InvalidDriverException(p.getName() + " cannot ride the bicycle.");
+        else throw new InvalidDriverException();
     }
 
     @Override

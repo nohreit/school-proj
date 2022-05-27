@@ -11,20 +11,18 @@ public abstract class Vehicle {
     public Vehicle(int numRows, int numSeatsPerRow) {
         this.numberOfRows = numRows;
         this.maxSeatsPerRow = numSeatsPerRow;
-        this.numSeatsPerRow = new int[numRows];
-        for (int row = 0; row < numRows; row++) {
-            this.numSeatsPerRow[row] = numSeatsPerRow;
-        }
-        personsOnBoard = new Person[numRows][maxSeatsPerRow];
+        this.numSeatsPerRow = new int[this.maxSeatsPerRow];
+        this.personsOnBoard = new Person[this.numberOfRows][this.maxSeatsPerRow];
     }
 
     public Vehicle(int[] numSeatsPerRow) {
-        this.numberOfRows = numSeatsPerRow.length;
-        for (int seat : numSeatsPerRow) {
-            this.maxSeatsPerRow = Math.max(this.maxSeatsPerRow, seat);
-        }
         this.numSeatsPerRow = numSeatsPerRow;
-        personsOnBoard = new Person[numberOfRows][maxSeatsPerRow];
+        this.numberOfRows = numSeatsPerRow.length;
+        this.maxSeatsPerRow = numSeatsPerRow[0];
+        this.personsOnBoard = new Person[this.numberOfRows][this.maxSeatsPerRow];
+        for (int value : numSeatsPerRow) {
+            this.maxSeatsPerRow = Math.max(this.maxSeatsPerRow, value);
+        }
     }
 
     public Vehicle(Person driver, int[] numSeatsPerRow) {
@@ -35,17 +33,8 @@ public abstract class Vehicle {
         }
     }
 
-    /*
-     * This abstract method will be implemented by derived classes to load the specified person into the vehicle at the first available seat.
-     * Searching for an available seat must start in the first row, please note that a person below the age of 5 or has a height less than 36
-     * is not allowed to sit in the first row. This method returns true if there is room for the specified person, otherwise the method returns false.
-     */
     abstract boolean loadPassenger(Person p);
 
-    /*
-     *This method attempts to load as many of the persons specified in the peeps array as possible.
-     * This method returns the number of people that were loaded into the Vehicle.
-     */
     abstract int loadPassengers(Person[] peeps);
 
     public void setDriver(Person p) throws InvalidDriverException {
@@ -56,8 +45,6 @@ public abstract class Vehicle {
     }
 
     public Person getDriver() {
-//        if(hasDriver()) return personsOnBoard[0][0];
-//        return null;
         return hasDriver() ? personsOnBoard[0][0] : null;
     }
 
@@ -133,12 +120,6 @@ public abstract class Vehicle {
             if (personsOnBoard[row][i] != null)
                 personInRow[i] = personsOnBoard[row][i].clone();
         }
-
-//        for (int i = 0; i < personInRow.length; i++) {
-//            if (personInRow[i] != null) return personInRow;
-//        }
-//
-//        return null;
         return Arrays.asList(personInRow).isEmpty() ? null : personInRow;
     }
 
@@ -163,6 +144,10 @@ public abstract class Vehicle {
 
     private boolean isValid(int index) {
         return index >= 0 && index < personsOnBoard.length; // returns true if within range or false if not.
+    }
+
+    public boolean isEmpty(Object isAvailable) {
+        return isAvailable == null;
     }
 
 }
